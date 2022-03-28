@@ -1,0 +1,39 @@
+#Exercise 1
+
+elenco_disponibili = {"Farenheit 451": 10, "Zibaldone": 7,
+"#Aristotle's Metaphysics": 5, "L'Alchimista": 1, "Harry Potter": 2, "Cime tempestose": 1}
+
+def prestito(a):
+    if (a in elenco_disponibili):
+        if (elenco_disponibili[a]>0):
+            print("There are", elenco_disponibili[a], "available copies of the book.")
+            b=input("Do you want to borrow it? Answer with Yes or No. ")
+            if (b=="Yes"):
+                elenco_disponibili[a]= elenco_disponibili[a]-1
+                print ("You have succesfully borrowed the copy.")
+                if (elenco_disponibili[a]==0):
+                    elenco_disponibili.pop(a)
+                    elenco_esauriti={a}
+                    print("The are no more copies of ",a,".")
+                else:
+                    print("The number of leftover copies is: ",elenco_disponibili[a])
+                p=True
+            elif (b=="No"):
+                print("Goodbye!")
+                p=False
+            else:
+                print("Can't you read? I said Yes or No.")
+                p=False
+        else:
+            print("Sorry, there are no leftover copies of this book.")
+            p=False
+    else:
+        elenco_mancanti={a}
+        print("The book is not available in the library. Buy it.")
+        p=False
+    if (p==True):
+        return("The loan was succesfull.")
+    else:
+        return("The loan was unssuccesfull.")
+
+print(prestito(a=input("Enter the book title: ")))
