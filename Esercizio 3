@@ -1,0 +1,17 @@
+#Exercise 3
+
+def stod(a):
+    b = a.splitlines()
+    for i in range(0,len(b)):
+        print("Row number ",i+1)
+        char_dict = {}
+        for c in b[i]:
+            if c in char_dict:
+                char_dict[c] += 1
+            else:
+                char_dict[c] = 1
+        for i in char_dict:
+            print(i, "*"*int(char_dict[i]))
+
+print(stod(a=input("Enter multirows text: ")))
+
