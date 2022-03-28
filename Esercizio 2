@@ -1,0 +1,10 @@
+#Exercise 2
+
+def lista(a):
+    c=range(10)
+    if((int(a) in c)==True):
+        return('The element is in the list, at position: ',c.index(int(a)))
+    else:
+        return('The element is not in the list.')
+
+print(lista(a=input("Enter an integer number: ")))
