@@ -1,0 +1,33 @@
+#Exercise 6
+
+print("Welcome to the game. You have 3 shots to guess a number between [1,10]")
+
+from random import random
+def game(a,c):
+        for i in range(1,int(c)+1):
+            print("Shot number", i)
+            b=input("Enter your guess: ")
+            if(float(b)>0):
+                if (int(b)==a):
+                    print("You won!")
+                    break
+                else:
+                    if(i<int(c)):
+                        print("Nope. Try again")
+                    else:
+                        print("No more guesses left. You failed.")
+            else:
+                print("I said a number between [1,10].")
+                break
+            
+d=input("Do you want to play the game? Yes or No? ")
+if (d=="Yes"):
+    while d=="Yes":
+        game(a=int(random()*10)+1,c=input("Enter the number of guesses you want: "))
+        d=input("Do you want to play again? Yes or No? ")
+    else:
+        print("I'll go back to sleep then.")
+elif (d=="No"):
+    print("Make up your mind before you wake me from my sleep.")
+else:
+    print("You're not even able to read.")
