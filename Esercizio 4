@@ -1,0 +1,10 @@
+#Exercise 4
+
+a=input("Enter a positive integer: ")
+if (a.isnumeric()==True):
+    print("Congratulations, you know what a positive integer is, here's your reward:")
+    print("#"*int(a))
+else:
+    print("That's not a positive integer.")
+              
+    
